@@ -163,7 +163,7 @@ export function SquadPage() {
 
         <div className="mt-12 flex justify-center animate-in fade-in zoom-in duration-700 delay-300">
           <img
-            src="/moorgreen-colts-fc-logo.webp"
+            src="/moorgreen-logo.webp"
             alt="Moorgreen Colts FC Logo"
             className="w-48 h-48 object-contain opacity-40 hover:opacity-60 transition-opacity duration-300"
           />
