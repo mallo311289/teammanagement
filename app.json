@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "TeamTrack",
+    "slug": "teamtrack-moorgreen",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./public/Untitled+design copy copy.webp",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./public/Untitled+design copy copy.webp",
+      "resizeMode": "contain",
+      "backgroundColor": "#4A6FA5"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.teamtrack.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./public/Untitled+design copy copy.webp",
+        "backgroundColor": "#4A6FA5"
+      },
+      "package": "com.teamtrack.app"
+    },
+    "web": {
+      "favicon": "./public/Untitled+design copy copy.webp",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}

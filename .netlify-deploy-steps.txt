@@ -1,0 +1,118 @@
+============================================
+NETLIFY DEPLOYMENT - STEP BY STEP GUIDE
+============================================
+
+This is the recommended deployment method since Bolt.host is experiencing SSL/TLS issues.
+
+STEP 1: PREPARE YOUR CODE
+--------------------------
+1. Ensure your code is in a GitHub repository
+2. If not, create a new repo:
+   - Go to github.com
+   - Click "New repository"
+   - Name it (e.g., "football-team-manager")
+   - Push your code:
+     git init
+     git add .
+     git commit -m "Initial commit"
+     git remote add origin YOUR_GITHUB_URL
+     git push -u origin main
+
+STEP 2: SIGN UP FOR NETLIFY
+----------------------------
+1. Go to https://www.netlify.com/
+2. Click "Sign Up"
+3. Choose "Sign up with GitHub" (easiest option)
+4. Authorize Netlify to access your GitHub account
+
+STEP 3: IMPORT YOUR PROJECT
+---------------------------
+1. On Netlify dashboard, click "Add new site"
+2. Choose "Import an existing project"
+3. Select "Deploy with GitHub"
+4. Find and select your repository
+5. Netlify will auto-detect Vite settings
+
+STEP 4: CONFIGURE BUILD SETTINGS
+---------------------------------
+Netlify should auto-detect these, but verify:
+- Build command: npm run build
+- Publish directory: dist
+- Click "Show advanced"
+
+STEP 5: ADD ENVIRONMENT VARIABLES
+----------------------------------
+Click "Add environment variables" and add:
+
+Variable name: VITE_SUPABASE_URL
+Value: [Your Supabase project URL]
+
+Variable name: VITE_SUPABASE_ANON_KEY
+Value: [Your Supabase anonymous key]
+
+To find these values:
+1. Go to your Supabase dashboard
+2. Click on your project
+3. Go to Settings → API
+4. Copy "Project URL" and "anon/public key"
+
+STEP 6: DEPLOY
+--------------
+1. Click "Deploy site"
+2. Wait 2-3 minutes for build to complete
+3. You'll get a URL like: https://random-name-123.netlify.app
+
+STEP 7: UPDATE SUPABASE SETTINGS
+---------------------------------
+IMPORTANT: You must do this or auth won't work!
+
+1. Copy your new Netlify URL
+2. Go to Supabase Dashboard
+3. Click on your project
+4. Go to Authentication → URL Configuration
+5. Add your Netlify URL to:
+   - Site URL
+   - Redirect URLs (add: https://your-netlify-url.netlify.app/**)
+
+STEP 8: TEST YOUR APP
+---------------------
+1. Open your Netlify URL
+2. Test login/signup
+3. Test all features
+
+STEP 9: CUSTOM DOMAIN (OPTIONAL)
+---------------------------------
+1. In Netlify: Site settings → Domain management
+2. Click "Add custom domain"
+3. Follow DNS instructions
+4. Update Supabase redirect URLs with new domain
+
+============================================
+TROUBLESHOOTING
+============================================
+
+If deployment fails:
+- Check build logs in Netlify dashboard
+- Ensure environment variables are correct
+- Verify package.json has all dependencies
+
+If login doesn't work:
+- Verify Supabase redirect URLs include Netlify URL
+- Check browser console for errors
+- Ensure environment variables are set correctly
+
+If app shows blank screen:
+- Check that publish directory is "dist"
+- Verify netlify.toml is in root directory
+- Check browser console for errors
+
+============================================
+AUTOMATIC DEPLOYMENTS
+============================================
+
+After initial setup:
+- Every push to main branch auto-deploys
+- Pull requests get preview URLs
+- Rollback to previous versions anytime
+
+============================================
