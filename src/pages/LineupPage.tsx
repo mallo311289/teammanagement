@@ -416,7 +416,7 @@ export function LineupPage() {
                             <AvatarImage src={player.avatar_url} alt={player.full_name} />
                           ) : (
                             <AvatarFallback className="bg-[#4A6FA5] text-white font-bold">
-                              {player.full_name.split(' ').map(n => n[0]).join('')}
+                              {player.full_name.split(' ').map((n: string) => n[0]).join('')}
                             </AvatarFallback>
                           )}
                         </Avatar>

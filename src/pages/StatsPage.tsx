@@ -49,7 +49,7 @@ export function StatsPage() {
       if (playersError) throw playersError;
 
       const playersWithStats: PlayerWithStats[] = await Promise.all(
-        (playersData || []).map(async (player) => {
+        (playersData || []).map(async (player: Player) => {
           const { data: statsData } = await supabase
             .from('player_stats')
             .select('*')
@@ -260,7 +260,7 @@ export function StatsPage() {
           </Card>
         </div>
 
-        <Tabs value={sortBy} onValueChange={(v) => setSortBy(v as any)} className="w-full">
+        <Tabs value={sortBy} onValueChange={(v: string) => setSortBy(v as 'goals' | 'assists' | 'matches')} className="w-full">
           <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-6 sm:mb-8 h-11 sm:h-12">
             <TabsTrigger value="goals" className="gap-1.5 sm:gap-2 text-xs sm:text-sm">
               <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4" />

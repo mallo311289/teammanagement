@@ -307,7 +307,7 @@ export function MediaPage() {
               <Input
                 id="caption"
                 value={caption}
-                onChange={(e) => setCaption(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCaption(e.target.value)}
                 placeholder="Add a caption for your upload..."
                 className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                 disabled={uploading}

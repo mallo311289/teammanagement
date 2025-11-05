@@ -62,7 +62,7 @@ export function ProfilePage() {
 
       if (error) throw error;
       setLinkedPlayers(data || []);
-      setSelectedPlayerIds((data || []).map(p => p.id));
+      setSelectedPlayerIds((data || []).map((p: Player) => p.id));
     } catch (error) {
       // console.error('Error loading linked players:', error);
     }
