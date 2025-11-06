@@ -44,13 +44,13 @@ export function FixturesPage() {
       if (eventsError) throw eventsError;
 
       const eventsWithStats: EventWithStats[] = await Promise.all(
-        (eventsData || []).map(async (event: Event) => {
+        (eventsData || []).map(async (event) => {
           const { data: availData } = await supabase
             .from('availability')
             .select('status')
             .eq('event_id', event.id);
 
-          const availableCount = availData?.filter((a: { status: string }) => a.status === 'available').length || 0;
+          const availableCount = availData?.filter((a) => a.status === 'available').length || 0;
           const totalCount = availData?.length || 0;
 
           return {
@@ -157,7 +157,7 @@ export function FixturesPage() {
           )}
         </div>
 
-        <Tabs value={activeTab} onValueChange={(v: string) => setActiveTab(v as 'upcoming' | 'past')} className="w-full">
+        <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as 'upcoming' | 'past')} className="w-full">
           <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-6 sm:mb-8 h-12">
             <TabsTrigger value="upcoming" className="gap-1.5 sm:gap-2 text-sm sm:text-base">
               <Calendar className="w-4 h-4" />
@@ -243,7 +243,7 @@ export function FixturesPage() {
 
         <div className="mt-8 sm:mt-12 flex justify-center">
           <img
-            src="/moorgreen-logo.webp"
+            src="/moorgreen-logo copy copy.webp"
             alt="Moorgreen Colts FC Logo"
             className="w-32 h-32 sm:w-48 sm:h-48 object-contain opacity-30"
           />
