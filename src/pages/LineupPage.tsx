@@ -416,7 +416,7 @@ export function LineupPage() {
                             <AvatarImage src={player.avatar_url} alt={player.full_name} />
                           ) : (
                             <AvatarFallback className="bg-[#4A6FA5] text-white font-bold">
-                              {player.full_name.split(' ').map((n: string) => n[0]).join('')}
+                              {player.full_name.split(' ').map(n => n[0]).join('')}
                             </AvatarFallback>
                           )}
                         </Avatar>
@@ -629,7 +629,7 @@ export function LineupPage() {
 
         <div className="mt-12 flex justify-center animate-in fade-in zoom-in duration-700 delay-300">
           <img
-            src="/moorgreen-logo.webp"
+            src="/moorgreen-logo copy copy.webp"
             alt="Moorgreen Colts FC Logo"
             className="w-48 h-48 object-contain opacity-40 hover:opacity-60 transition-opacity duration-300"
           />
