@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Calendar as CalendarIcon, MapPin, Trophy, Users, ChevronRight, Shield, RefreshCw, Clipboard } from 'lucide-react';
-import { supabase, Event, Notification } from '../lib/supabase';
+import { supabase, Event } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
 import { useNotifications } from '../contexts/NotificationContext';
 import { Badge } from '../components/ui/badge';
@@ -76,8 +76,8 @@ export function HomePage() {
     if (!profile) return;
 
     const eventNotificationIds = notifications
-      .filter((n: Notification) => !n.is_read && n.type === 'event')
-      .map((n: Notification) => n.id);
+      .filter((n) => !n.is_read && n.type === 'event')
+      .map((n) => n.id);
 
     if (eventNotificationIds.length > 0) {
       await supabase
@@ -280,7 +280,7 @@ export function HomePage() {
 
         <div className="mt-12 flex justify-center animate-in fade-in zoom-in duration-700 delay-300">
           <img
-            src="/moorgreen-logo.webp"
+            src="/moorgreen-logo copy copy.webp"
             alt="Moorgreen Colts FC Logo"
             className="w-48 h-48 object-contain opacity-40 hover:opacity-60 transition-opacity duration-300"
           />
