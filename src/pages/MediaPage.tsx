@@ -307,7 +307,7 @@ export function MediaPage() {
               <Input
                 id="caption"
                 value={caption}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCaption(e.target.value)}
+                onChange={(e) => setCaption(e.target.value)}
                 placeholder="Add a caption for your upload..."
                 className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                 disabled={uploading}
@@ -493,7 +493,7 @@ export function MediaPage() {
 
         <div className="mt-12 flex justify-center animate-in fade-in zoom-in duration-700 delay-300">
           <img
-            src="/moorgreen-logo.webp"
+            src="/moorgreen-logo copy copy.webp"
             alt="Moorgreen Colts FC Logo"
             className="w-48 h-48 object-contain opacity-40 hover:opacity-60 transition-opacity duration-300"
           />
