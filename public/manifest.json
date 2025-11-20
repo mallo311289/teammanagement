@@ -10,13 +10,13 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "moorgreen-logo.webp",
+      "src": "/home/project/public/moorgreen-logo.webp",
       "sizes": "192x192",
       "type": "image/webp",
       "purpose": "any"
     },
     {
-      "src": "moorgreen-logo.webp",
+      "src": "/home/project/public/moorgreen-logo.webp",
       "sizes": "512x512",
       "type": "image/webp",
       "purpose": "maskable"
@@ -32,7 +32,7 @@
       "url": "/?page=chat",
       "icons": [
         {
-          "src": "moorgreen-logo.webp",
+          "src": "/home/project/public/moorgreen-logo.webp",
           "sizes": "96x96"
         }
       ]
@@ -44,7 +44,7 @@
       "url": "/?page=fixtures",
       "icons": [
         {
-          "src": "moorgreen-logo.webp",
+          "src": "/home/project/public/moorgreen-logo.webp",
           "sizes": "96x96"
         }
       ]

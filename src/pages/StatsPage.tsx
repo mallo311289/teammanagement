@@ -410,7 +410,7 @@ export function StatsPage() {
 
         <div className="mt-8 sm:mt-12 flex justify-center">
           <img
-            src="/moorgreen-logo.webp"
+            src="/moorgreen-logo copy copy.webp"
             alt="Moorgreen Colts FC Logo"
             className="w-32 h-32 sm:w-48 sm:h-48 object-contain opacity-30"
           />

@@ -5,7 +5,7 @@ const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/Untitled+design copy copy.webp',
+  '/moorgreen-colts-fc-logo.webp',
 ];
 
 self.addEventListener('install', (event) => {
@@ -85,8 +85,8 @@ self.addEventListener('push', (event) => {
   const title = data.title || 'TeamTrack';
   const options = {
     body: data.body || 'You have a new notification',
-    icon: '/Untitled+design copy copy.webp',
-    badge: '/Untitled+design copy copy.webp',
+    icon: '/moorgreen-colts-fc-logo.webp',
+    badge: '/moorgreen-colts-fc-logo.webp',
     vibrate: [200, 100, 200],
     data: data.data || {},
     actions: data.actions || [],
